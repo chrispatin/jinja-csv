@@ -47,6 +47,13 @@ jinja-csv -i example/users.csv -t example/users.j2 | mysql -u root -p testdb
 -e, --ext           The file extension to be used
 ```
 
+## Build
+
+```bash
+python3 setup.py build
+python3 setup.py sdist
+```
+
 ## Authors
 
 * Raymond Chee (original author)

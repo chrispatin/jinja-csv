@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: jinja-csv
-Version: 0.2
+Version: 0.3
 Summary: Use Jinja templates to format data from CSV files
 Home-page: https://github.com/gabihodoroaga/jinja-csv
 Author: Raymond Chee, Gabriel Hodoroaga
@@ -10,20 +10,12 @@ Description: # jinja-csv
         
         Use Jinja2 templates to format data from CSV files.
         
-        ## Example usage
-        
-        ```bash
-        jinja-csv -i example/test.csv -t example/example.j2 -o example/output.txt
-        
-        ```
-        
         ## Installation
         
         Works on Python 3.4+.
         
         ```bash
-        pip install https://raw.githubusercontent.com/gabihodoroaga/jinja-csv/master/dist/jinja_csv-0.1-py3-none-any.whl
-        
+        pip3 install https://github.com/gabihodoroaga/jinja-csv/releases/download/v0.2/jinja_csv-0.2-py3-none-any.whl
         ```
         
         or 
@@ -33,8 +25,41 @@ Description: # jinja-csv
         
         cd jinja-csv
         
-        python setup.py install
+        python3 setup.py install
         
+        ```
+        
+        ## Example usage
+        
+        Simple usage with output
+        
+        ```bash
+        jinja-csv -i example/users.csv -t example/users.j2 -o example/users.sql
+        
+        ```
+        
+        If you don't specify the output argument then you can pipe the result to another command.
+        
+        ```bash
+        jinja-csv -i example/users.csv -t example/users.j2 | mysql -u root -p testdb
+        ```
+        
+        ## Arguments
+        
+        ```txt
+        -i, --inputfile     The input csv file.
+        -t, --template      The Jinja template file
+        -o, --output        The output file, or the output folder when --file argument is present
+        -f, --files         Generate one file per row
+        -r, --row           Index of the row to be used for the name of the file
+        -e, --ext           The file extension to be used
+        ```
+        
+        ## Build
+        
+        ```bash
+        python3 setup.py build
+        python3 setup.py sdist
         ```
         
         ## Authors
@@ -46,11 +71,6 @@ Description: # jinja-csv
         
         Forked from [github.com/rjchee/jinja-csv](https://github.com/rjchee/jinja-csv), fixed some issues and created the setup.
         
-        
-        <!--
-        python3 -m jinja_csv.jinja_csv -i ../example/email.csv -t ../example/email.j2 --files --output ../out/
-        
-        ->
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License

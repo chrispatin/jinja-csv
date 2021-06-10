@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
     name='jinja-csv',  
-    version='0.2',
+    version='0.3',
     author="Raymond Chee, Gabriel Hodoroaga",
     author_email="gabihodoroaga@gmail.com",
     description="Use Jinja templates to format data from CSV files",
@@ -18,8 +18,8 @@ setuptools.setup(
         'jinja-csv = jinja_csv.jinja_csv:main',
     ]},
     install_requires=[
-        'Jinja2==2.8',
-        'MarkupSafe==0.23',
+        'Jinja2==3.0.1',
+        'MarkupSafe==2.0.1',
         'python-dateutil==2.6.0',
         'six==1.12.0'
     ],
