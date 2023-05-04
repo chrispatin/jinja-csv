@@ -18,8 +18,8 @@ setuptools.setup(
         'jinja-csv = jinja_csv.jinja_csv:main',
     ]},
     install_requires=[
-        'Jinja2==3.0.1',
-        'MarkupSafe==2.0.1',
+        'Jinja2==3.1.2',
+        'MarkupSafe==2.1.2',
         'python-dateutil==2.6.0',
         'six==1.12.0'
     ],
